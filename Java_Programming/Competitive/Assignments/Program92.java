@@ -1,35 +1,40 @@
-import java.util.*;
-
-class DigitX
+class Logic
 {
-    public int ReverseNumber (int iNO)
+    void displayGrade(int marks)
     {
-      int iDigit = 0;
-      int iRev = 0;
-      while (iNO !=0)
-      {
-        iDigit = iNO %10;
-        iRev= (iRev*10 )+ iDigit;
-        iNO = iNO/10;
-       
+        if(marks >= 90)
+        {
+            System.out.println("Grade : A+");
+        }
+        else if(marks >= 80)
+        {
+            System.out.println("Grade : A");
+        }
+        else if(marks >= 70)
+        {
+            System.out.println("Grade : B");
+        }
+        else if(marks >= 60)
+        {
+            System.out.println("Grade : C");
+        }
+        else if(marks >= 40)
+        {
+            System.out.println("Grade : D");
+        }
+        else
+        {
+            System.out.println("Fail");
+        }
     }
-    return  iRev;
-}
 }
 
-public class Program92
-{  
-   public static void main(String A [] )
-   {
-     Scanner sobj = new Scanner(System.in);
-     DigitX dobj = new DigitX();
-     int iValue = 0;
-     int iRet =0;
+ public class Program92
+{
+    public static void main(String args[])
+    {
+        Logic obj = new Logic();
 
-     System.out.println("Enter Number :");
-
-     iValue = sobj.nextInt();
-     iRet=dobj.ReverseNumber(iValue);
-     System.out.println("Reverse Number is :"+iRet);
-   }                       
+        obj.displayGrade(82);
+    }
 }

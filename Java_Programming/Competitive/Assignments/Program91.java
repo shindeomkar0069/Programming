@@ -1,39 +1,26 @@
-import java.util.*;
+//2024 is a Leap Year
 
-class DigitX
+class Logic
 {
-    public int SumEvenDigits (int iNO)
+    void checkLeapYear(int year)
     {
-      int iDigit = 0;
-      int iSum = 0;
-      while (iNO !=0)
-      {
-        iDigit = iNO %10;
-     if(iDigit %2 == 0)
-     {
-        iSum = iSum+iDigit;    
-     }
-      
-       iNO = iNO/10;
-       
+        if((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))
+        {
+            System.out.println(year + " is a Leap Year");
+        }
+        else
+        {
+            System.out.println(year + " is not a Leap Year");
+        }
     }
-    return  iSum;
-}
 }
 
-public class Program91
-{  
-   public static void main(String A [] )
-   {
-     Scanner sobj = new Scanner(System.in);
-     DigitX dobj = new DigitX();
-     int iValue = 0;
-     int iRet =0;
+public class Program91  
+{
+    public static void main(String args[])
+    {
+        Logic obj = new Logic();
 
-     System.out.println("Enter Number :");
-
-     iValue = sobj.nextInt();
-     iRet=dobj.SumEvenDigits(iValue);
-     System.out.println("Summetion of Even Digit is  :"+iRet);
-   }                       
+        obj.checkLeapYear(2024);
+    }
 }

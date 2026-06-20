@@ -1,54 +1,25 @@
-import java.util.*;
-
-class DigitX
+class Logic
 {
-    public boolean CheckPallindrome (int iNO)
+    void checkDivisible(int num)
     {
-      int iDigit = 0;
-      int iRev = 0;
-      int iTemp=0;
-
-      iTemp = iNO;
-
-      while (iNO !=0)
-      {
-        iDigit = iNO %10;
-        iRev= (iRev*10 )+ iDigit;
-        iNO = iNO/10;
-       
-    }
-    if(iRev == iTemp)
-    {
-        return true;
-    }
-    else
-    {
-       return false;
+        if((num % 5 == 0) && (num % 11 == 0))
+        {
+            System.out.println(num + " is divisible by 5 and 11");
+        }
+        else
+        {
+            System.out.println(num + " is not divisible by 5 and 11");
+        }
     }
 }
-}
 
-public class Program93
-{  
-   public static void main(String A [] )
-   {
-     Scanner sobj = new Scanner(System.in);
-     DigitX dobj = new DigitX();
-     int iValue = 0;
-     boolean bRet = false;
+public class Program93 
+{
+    public static void main(String args[])
+    {
+        Logic obj = new Logic();
 
-     System.out.println("Enter Number :");
-
-     iValue = sobj.nextInt();
-     bRet=dobj.CheckPallindrome(iValue);
-     if(bRet == true)
-        {
-              System.out.println("Number is Pallindrome");
-
-        }
-      else
-        {
-            System.out.println("Number is not Pallindrome");
-        }
-   }                       
+        obj.checkDivisible(55);
+    }
+    
 }
